@@ -80,6 +80,10 @@ function billSettings() {
         totalField.classList.add("danger");
         totalField.classList.remove("warning");
     }
+    if(totalCosts < setCritical) {
+        totalField.classList.remove("danger");
+       // totalField.classList.remove("warning");
+    }
   
 }
 addRadioBillButton.addEventListener('click', billSettings)
