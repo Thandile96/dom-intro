@@ -34,6 +34,8 @@ function updateSettings(){
     setSms = Number(smsCostSet.value);
     setWarning = Number(warningLevelSet.value);
     setCritical = Number(criticalLevelSet.value);
+    addClass()
+    
 }
 updateButton.addEventListener('click', updateSettings)
 
@@ -72,6 +74,12 @@ function billSettings() {
     smsTotalField.innerHTML = smsCosts.toFixed(2);
     totalField.innerHTML = totalCosts.toFixed(2);
 
+    addClass()
+  
+}
+
+
+function addClass(){
     if(totalCosts >= setWarning && totalCosts < setCritical) {
         totalField.classList.add("warning");
         totalField.classList.remove("danger");
@@ -80,12 +88,12 @@ function billSettings() {
         totalField.classList.add("danger");
         totalField.classList.remove("warning");
     }
-    if(totalCosts < setCritical) {
+    else {
         totalField.classList.remove("danger");
-       // totalField.classList.remove("warning");
+        totalField.classList.remove("warning");
     }
-  
 }
+
 addRadioBillButton.addEventListener('click', billSettings)
 
 
